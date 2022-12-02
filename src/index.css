@@ -46,6 +46,12 @@ h1 {
   font-weight: bold;
 }
 
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 29px;
+}
+
 #root {
   height: 100%;
 }

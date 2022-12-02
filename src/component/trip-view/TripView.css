@@ -1,0 +1,28 @@
+.rclib-trip-view {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rclib-trip-view-title-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rclib-trip-view-edit {
+  border-radius: 20px;
+  height: 40px;
+  padding: 0;
+  width: 40px;
+}
+
+.rclib-trip-view-row {
+  display: flex;
+  gap: 12px;
+}
+
+.rclib-trip-view-row > p {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 19px;
+}

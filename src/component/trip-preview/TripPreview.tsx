@@ -14,9 +14,9 @@ export const TripPreview = (props: TripPreviewProps) => {
   const {contacts, location, time, title} = {...props};
 
   return (
-    <div className='react-component-lib-trip-preview'>
-      <Icon alt='Location icon' className='react-component-lib-trip-preview-icon' src={locationIcon} width='32px' />
-      <div className='react-component-lib-trip-preview-content'>
+    <div className='rclib-trip-preview'>
+      <Icon alt='Location icon' className='rclib-trip-preview-icon' src={locationIcon} width='32px' />
+      <div className='rclib-trip-preview-content'>
         <h2>{title}</h2>
         <p>{location}</p>
         <p>{time}</p>
