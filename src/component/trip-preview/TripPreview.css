@@ -1,10 +1,10 @@
-.stclib-trip-preview {
+.react-component-lib-trip-preview {
   align-items: flex-start;
   display: flex;
   gap: 12px;
 }
 
-.stclib-trip-preview-icon::after {
+.react-component-lib-trip-preview-icon::after {
   content: '';
   position: relative;
   min-height: calc(100% - 16px);
@@ -12,18 +12,18 @@
   flex-grow: 1;
 }
 
-.stclib-trip-preview-content {
+.react-component-lib-trip-preview-content {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.stclib-trip-preview-content > h2 {
+.react-component-lib-trip-preview-content > h2 {
   font-size: 16px;
   line-height: 19px;
 }
 
-.stclib-trip-preview-content > p {
+.react-component-lib-trip-preview-content > p {
   font-size: 14px;
   font-style: italic;
   line-height: 17px;

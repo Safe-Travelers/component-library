@@ -16,7 +16,7 @@ export const Button = ({ children, onClick, ...props }: ButtonProps) => {
 
   return (
     <button
-      className='stclib-button'
+      className='react-component-lib-button'
       onClick={handleClick}
       type='button'
       {...props}

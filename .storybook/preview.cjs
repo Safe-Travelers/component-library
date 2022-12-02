@@ -1,4 +1,4 @@
-import '@jam-dev/starlight-react/dist/index.css';
+// import '@jam-dev/starlight-react/styles';
 import '../src/index.css';
 
 export const parameters = {
