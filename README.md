@@ -2,7 +2,10 @@
 
 Safe Travelers' React component library for the webapp.
 
-## How to Contribute
+## Explore components
+[Storybook link](https://safe-travelers.github.io/component-library)
+
+## How to contribute
 
 1. Run `npm i`
 1. Run `npm run storybook` to preview components

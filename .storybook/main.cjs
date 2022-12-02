@@ -18,7 +18,7 @@ module.exports = {
   "viteFinal": (config, { configType }) => {
     // some configs
     if (configType === 'PRODUCTION') {
-      config.base = '/starlight-react';
+      config.base = '/component-library';
     }
 
     return config
