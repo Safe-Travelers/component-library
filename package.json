@@ -10,7 +10,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@jam-dev/starlight-react": "^0.0.23",
+    "@jam-dev/starlight-react": "^0.0.28",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -36,7 +36,7 @@
       "import": "./dist/react-component-lib.js",
       "require": "./dist/react-component-lib.umd.cjs"
     },
-    "./styles": {
+    "./css": {
       "import": "./dist/style.css",
       "require": "./dist/style.css"
     }

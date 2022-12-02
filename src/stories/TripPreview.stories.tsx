@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { TripPreview } from '../component/trip-preview/TripPreview';
 
 export default {
-  title: 'Input/TripPreview',
+  title: 'Display/TripPreview',
   component: TripPreview,
 
 } as ComponentMeta<typeof TripPreview>;
