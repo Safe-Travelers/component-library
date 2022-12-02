@@ -1,0 +1,17 @@
+.rclib-contact-preview {
+  align-items: flex-start;
+  display: flex;
+  gap: 12px;
+}
+
+.rclib-contact-preview-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rclib-contact-preview-content > p {
+  font-size: 14px;
+  font-style: italic;
+  line-height: 17px;
+}
