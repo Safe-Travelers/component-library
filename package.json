@@ -11,7 +11,7 @@
     "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
-    "@jam-dev/starlight-react": "^0.0.35",
+    "@jam-dev/starlight-react": "^0.0.46",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
