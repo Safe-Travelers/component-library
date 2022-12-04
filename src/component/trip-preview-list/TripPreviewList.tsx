@@ -10,6 +10,10 @@ export interface TripPreviewListProps {
 export const TripPreviewList = (props: TripPreviewListProps) => {
   const { trips, ...otherProps } = { ...props };
 
+  if (trips.length === 0) {
+    return null;
+  }
+
   const renderTripPreviews = (tripPreviewProps: TripPreviewProps[]): ReactNode[] | ReactNode => {
     const tripPreviewElements: ReactNode[] = [];
 
@@ -17,6 +21,7 @@ export const TripPreviewList = (props: TripPreviewListProps) => {
       tripPreviewElements.push(
         <TripPreview
           contacts={tripPreviewProp.contacts}
+          key={tripPreviewProp.title}
           location={tripPreviewProp.location}
           time={tripPreviewProp.time}
           title={tripPreviewProp.title}
@@ -24,7 +29,7 @@ export const TripPreviewList = (props: TripPreviewListProps) => {
       );
     });
 
-    return tripPreviewElements.length > 0 ? tripPreviewElements : <p>No trips added.</p>;
+    return tripPreviewElements;
   }
 
   return (
