@@ -3,7 +3,7 @@ import closeIcon from '../../asset/icon/close.svg';
 import locationIcon from '../../asset/icon/map-marker.svg';
 import './TripPreview.css';
 
-interface TripPreviewProps {
+export interface TripPreviewProps {
   contacts: string[];
   location: string;
   time: string;
@@ -22,7 +22,7 @@ export const TripPreview = (props: TripPreviewProps) => {
         <p>{time}</p>
         <ChipList values={contacts} />
       </div>
-      <Icon alt='Delete' src={closeIcon} />
+      <Icon alt='Delete' className='rclib-trip-preview-delete' src={closeIcon} />
     </div>
   );
 }
