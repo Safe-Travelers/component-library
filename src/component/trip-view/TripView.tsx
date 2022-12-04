@@ -5,7 +5,7 @@ import mapMarkerIcon from '../../asset/icon/map-marker.svg';
 import pencilIcon from '../../asset/icon/pencil.svg';
 import './TripView.css';
 
-interface TripViewProps {
+export interface TripViewProps {
   [key: string]: any;
   contacts: string[];
   dateTime: string;

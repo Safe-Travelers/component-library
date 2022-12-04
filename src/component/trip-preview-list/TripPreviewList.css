@@ -1,0 +1,5 @@
+.rclib-trip-preview-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-y-large);
+}
