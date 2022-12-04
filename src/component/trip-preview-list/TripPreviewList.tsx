@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { TripPreview, TripPreviewProps } from '../trip-preview/TripPreview';
 import './TripPreviewList.css';
 
-interface TripPreviewListProps {
+export interface TripPreviewListProps {
   [key: string]: any;
   trips: TripPreviewProps[];
 }

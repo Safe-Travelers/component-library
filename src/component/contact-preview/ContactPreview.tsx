@@ -2,7 +2,7 @@ import { Icon } from '@jam-dev/starlight-react';
 import accountIcon from '../../asset/icon/account.svg';
 import './ContactPreview.css';
 
-interface ContactPreviewProps {
+export interface ContactPreviewProps {
   contactName: string;
   hasEmail?: boolean;
   hasPhone?: boolean;
