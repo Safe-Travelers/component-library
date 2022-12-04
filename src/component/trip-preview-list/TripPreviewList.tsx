@@ -10,7 +10,7 @@ interface TripPreviewListProps {
 export const TripPreviewList = (props: TripPreviewListProps) => {
   const { trips, ...otherProps } = { ...props };
 
-  const renderTripPreviews = (tripPreviewProps: TripPreviewProps[]): ReactNode[] => {
+  const renderTripPreviews = (tripPreviewProps: TripPreviewProps[]): ReactNode[] | ReactNode => {
     const tripPreviewElements: ReactNode[] = [];
 
     tripPreviewProps.forEach(tripPreviewProp => {
@@ -24,7 +24,7 @@ export const TripPreviewList = (props: TripPreviewListProps) => {
       );
     });
 
-    return  tripPreviewElements;
+    return tripPreviewElements.length > 0 ? tripPreviewElements : <p>No trips added.</p>;
   }
 
   return (
