@@ -1,6 +1,6 @@
 {
   "name": "@safe-traveler/react-component-lib",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,7 +11,7 @@
     "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
-    "@jam-dev/starlight-react": "^0.0.47",
+    "@jam-dev/starlight-react": "^0.0.48",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
