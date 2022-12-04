@@ -17,6 +17,7 @@ export const TripPreviewList = (props: TripPreviewListProps) => {
       tripPreviewElements.push(
         <TripPreview
           contacts={tripPreviewProp.contacts}
+          key={tripPreviewProp.title}
           location={tripPreviewProp.location}
           time={tripPreviewProp.time}
           title={tripPreviewProp.title}
