@@ -9,3 +9,4 @@ export * from "./component/trip-preview-list/TripPreviewList";
 export * from "./component/trip-preview/TripPreview";
 export * from "./component/trip-view/TripView";
 export * from "./component/star-rating/StarRating";
+export * from "./component/review-preview/ReviewPreview";
