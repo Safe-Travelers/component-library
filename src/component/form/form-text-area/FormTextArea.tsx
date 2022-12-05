@@ -22,7 +22,7 @@ export const FormTextArea = ({id, initialValue, labelText, name, onChange, place
     <label htmlFor={id}>
       { labelText }
       <textarea
-        className='form-element'
+        className='rclib-form-element'
         id={id}
         name={name}
         onChange={handleChange}

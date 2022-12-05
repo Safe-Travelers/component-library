@@ -22,7 +22,7 @@ export const FormText = ({id, initialValue, labelText, name, onChange, placehold
     <label htmlFor={id}>
       { labelText }
       <input
-        className='form-element'
+        className='rclib-form-element'
         id={id}
         name={name}
         onChange={handleChange}

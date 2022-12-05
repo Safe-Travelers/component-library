@@ -1,0 +1,17 @@
+.rclib-form-date {
+    flex: 1;
+
+    min-height: 32px;
+    padding: 8px;
+    border: 1px solid var(--accent-color-faded);
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+    background-color: unset;
+
+    font-size: 14px;
+    font-weight: normal;
+    color: inherit;
+
+    transition: var(--transition-time-fast);
+}

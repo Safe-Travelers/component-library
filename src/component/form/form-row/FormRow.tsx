@@ -7,7 +7,7 @@ export interface FormRowProps {
 
 export const FormRow = ({children}: FormRowProps) => {
   return (
-    <div className='form-row'>
+    <div className='rclib-form-row'>
       { children }
     </div>
   );
