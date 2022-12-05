@@ -24,7 +24,7 @@ Default.args = {
   profileId: "p1",
   reviewId: "r1",
   reviewVote: 0,
-  userVoted: (reviewId, profileId, vote) => {
+  onUserVote: (reviewId, profileId, vote) => {
     console.log(reviewId + " " + profileId + " " + vote);
   },
 };

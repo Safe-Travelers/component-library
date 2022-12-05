@@ -18,7 +18,7 @@ export interface ReviewPreviewProps {
   profileId: string;
   reviewId: string;
   reviewVote: number;
-  userVoted?: (reviewId: string, profileId: string, vote: number) => void;
+  onUserVote?: (reviewId: string, profileId: string, vote: number) => void;
 }
 
 export const ReviewPreview = (props: ReviewPreviewProps) => {
@@ -33,7 +33,7 @@ export const ReviewPreview = (props: ReviewPreviewProps) => {
     profileId,
     reviewId,
     reviewVote,
-    userVoted,
+    onUserVote,
   } = { ...props };
 
   let [helpful, setHelpful] = useState(upvotes);
@@ -64,15 +64,15 @@ export const ReviewPreview = (props: ReviewPreviewProps) => {
           <p>{body}</p>
         </div>
 
-        {userVoted != undefined ? (
+        {onUserVote != undefined ? (
           <div className="rclib-review-voting">
             <p>{helpful} people found this helpful</p>
             <Vote
               onVote={(oldVote, voteClick) => {
                 if (oldVote == voteClick) {
-                  userVoted(reviewId, profileId, 0);
+                  onUserVote(reviewId, profileId, 0);
                 } else {
-                  userVoted(reviewId, profileId, voteClick);
+                  onUserVote(reviewId, profileId, voteClick);
                 }
                 if (voteClick == 1 && oldVote != 1) {
                   setHelpful(helpful + 1);
