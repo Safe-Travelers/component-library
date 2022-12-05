@@ -1,6 +1,6 @@
 import {ChangeEvent, FormEvent, ReactNode, useState} from 'react';
 import '../FormCommon.css';
-import './FormNumber.css';
+//import './FormNumber.css';
 
 export interface FormNumberProps {
     id: string;
