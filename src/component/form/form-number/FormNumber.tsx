@@ -1,8 +1,8 @@
 import {ChangeEvent, FormEvent, ReactNode, useState} from 'react';
 import '../FormCommon.css';
-import './FormDate.css';
+import './FormNumber.css';
 
-export interface FormDateProps {
+export interface FormNumberProps {
     id: string;
     initialValue?: string;
     labelText?: string;
@@ -10,7 +10,7 @@ export interface FormDateProps {
     onChange: (value: string) => any;
 }
 
-export const FormDate = ({id, initialValue, labelText, name, onChange}: FormDateProps) => {
+export const FormNumber = ({id, initialValue, labelText, name, onChange}: FormNumberProps) => {
     const [value, setValue] = useState(initialValue || '');
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -23,11 +23,11 @@ export const FormDate = ({id, initialValue, labelText, name, onChange}: FormDate
         <label htmlFor={id}>
             { labelText }
             <input
-                className='rclib-form-date'
+                className='rclib-form-element'
                 id={id}
                 name={name}
                 onChange={handleChange}
-                type='datetime-local'
+                type='number'
                 value={value}
             />
         </label>

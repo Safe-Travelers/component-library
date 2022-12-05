@@ -1,14 +1,14 @@
-.form-submit {
+.rclib-form-submit {
   background-color: var(--accent-color);
   cursor: pointer;
 }
 
-.form-submit:enabled {
+.rclib-form-submit:enabled {
   background-color: var(--accent-color-faded);
   cursor: pointer;
 }
 
-.form-submit:disabled {
+.rclib-form-submit:disabled {
   background-color: white;
   opacity: 0.5;
   cursor: default;

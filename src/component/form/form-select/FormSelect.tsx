@@ -1,16 +1,17 @@
 import {ChangeEvent, FormEvent, ReactNode, useState} from 'react';
 import '../FormCommon.css';
-import './FormDate.css';
+//import './FormSelect.css';
 
-export interface FormDateProps {
+export interface FormSelectProps {
     id: string;
     initialValue?: string;
     labelText?: string;
     name: string;
     onChange: (value: string) => any;
+    children?: ReactNode;
 }
 
-export const FormDate = ({id, initialValue, labelText, name, onChange}: FormDateProps) => {
+export const FormSelect = ({id, initialValue, labelText, name, onChange, children}: FormSelectProps) => {
     const [value, setValue] = useState(initialValue || '');
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -22,14 +23,15 @@ export const FormDate = ({id, initialValue, labelText, name, onChange}: FormDate
     return (
         <label htmlFor={id}>
             { labelText }
-            <input
-                className='rclib-form-date'
+            <select
+                className='rclib-form-element'
                 id={id}
                 name={name}
-                onChange={handleChange}
-                type='datetime-local'
+                //onChange={handleChange}
                 value={value}
-            />
+            >
+                { children }
+            </select>
         </label>
     );
 }
