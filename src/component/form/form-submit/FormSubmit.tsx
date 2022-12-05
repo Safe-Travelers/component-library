@@ -8,7 +8,7 @@ export interface FormSubmitProps {
 export const FormSubmit = ({text, disabled}: FormSubmitProps) => {
   return (
     <input
-      className='form-element form-submit'
+      className='rclib-form-element form-submit'
       type='submit'
       value={text}
       disabled={disabled}

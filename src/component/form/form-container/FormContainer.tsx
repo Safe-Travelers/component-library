@@ -14,7 +14,7 @@ export const FormContainer = ({children, onSubmit}: FormContainerProps) => {
   }
 
   return (
-    <form className='form-container' onSubmit={handleSubmit}>
+    <form className='rclib-form-container' onSubmit={handleSubmit}>
       { children }
     </form>
   );
