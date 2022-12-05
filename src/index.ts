@@ -1,5 +1,6 @@
 import "@jam-dev/starlight-react/css";
 export * from "./component/contact-preview/ContactPreview";
+export * from "./component/contact-preview-list/ContactPreviewList";
 export * from "./component/form/form-container/FormContainer";
 export * from "./component/form/form-row/FormRow";
 export * from "./component/form/form-submit/FormSubmit";
