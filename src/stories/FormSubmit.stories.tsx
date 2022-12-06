@@ -3,8 +3,8 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { FormSubmit } from '../component/form/form-submit/FormSubmit';
 
 export default {
-    title: 'Form/FormSubmit',
-    component: FormSubmit,
+  title: 'Form/FormSubmit',
+  component: FormSubmit,
 
 } as ComponentMeta<typeof FormSubmit>;
 

@@ -4,3 +4,7 @@
   min-height: 40px;
   transition: var(--speed-fast);
 }
+
+.rclib-form-submit-disabled {
+  filter: grayscale(1);
+}
