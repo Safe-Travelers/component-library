@@ -1,83 +1,30 @@
-:root {
-  --color-accent-1: rgb(228, 222, 205);
-  --color-accent-2: #d1cbb9;
-  --color-accent-3: #9A937D;
-  --color-accent-3-filter: invert(63%) sepia(11%) saturate(545%) hue-rotate(8deg) brightness(91%) contrast(88%);
-  --color-bg-1: rgb(255, 255, 255);
-  --color-bg-2: rgb(255, 255, 255);
-
-  --height-nav: 64px;
-  --width-sidenav: min(80vw, calc(100vw - 64px));
-  --gap-x-regular: 12px;
-  --gap-y-regular: 24px;
-  --gap-y-large: 32px;
-
-  --speed-fast: 150ms;
-  --speed-regular: 250ms;
-  --speed-slow: 350ms;
-
-
-
-
-
-  /* Color */
-  --accent-color: #9A937D;
-  --accent-color-faded: #E3DECE;
-  --accent-color-extra-faded: #f7f3e4;
-  --accent-color-extra-faded-translucent: rgba(247, 243, 228, 0.75);
-  --bg-color: #FFFFFF;
-  --bg-color-translucent: rgba(255, 255, 255, 0.15);
-
-  --acrylic-accent-color: rgba(247, 243, 228);
-  --acrylic-accent-color-translucent: rgba(247, 243, 228, 0.75);
-  --acrylic-accent-color-translucent-dark: rgba(227, 222, 206, 0.75);
-
-  /* Size */
-  --navbar-height: 64px;
-  --sidenav-width: calc(100vw - 64px);
-
-  --side-gap: 16px;
-  --side-gap-large: 16px;
-  --side-gap-xlarge: 32px;
-
-  /* Speed */
-  --transition-time-fast: 0.15s;
-  --transition-time-regular: 0.5s;
-}
-.rclib-form-container label {
-  flex: 1;
-
-  font-size: 12px;
-  font-weight: bold;
-
+.rclib-form-label {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-}
-
-.rclib-form-element {
   flex: 1;
+  font-size: 12px;
+  font-weight: bold;
+  gap: 4px;
+  line-height: 14px;
+}
 
-  min-height: 32px;
-  padding: 8px;
-  border: 1px solid var(--accent-color-faded);
+.rclib-form-input {
+  background-color: var(--color-bg-2);
   border-radius: 4px;
-  outline: none;
+  border: 1px solid var(--color-accent-2);
   box-sizing: border-box;
-  background-color: unset;
-
-  font-size: 14px;
-  font-weight: normal;
   color: inherit;
-
-  transition: var(--transition-time-fast);
+  min-height: 40px;
+  outline: none;
+  padding: 8px 12px;
+  transition: border var(--speed-fast);
 }
 
-.rclib-form-element:hover, .form-element:focus {
-  border-color: var(--accent-color);
+.rclib-form-input:hover, .rclib-form-input:focus {
+  border-color: var(--color-accent-3);
 }
 
-.rclib-form-element::placeholder {
-  color: var(--accent-color-faded);
+.rclib-form-input::placeholder {
+  color: var(--color-accent-1);
 }
 

@@ -3,28 +3,27 @@ import { ChangeEvent, useState } from "react";
 export interface FormTextProps {
   id: string;
   initialValue?: string;
-  labelText?: string;
-  name: string;
-  onChange: (value: string) => any;
+  label?: string;
+  onChange?: (value: string) => any;
   placeholder?: string;
 }
 
-export const FormText = ({id, initialValue, labelText, name, onChange, placeholder}: FormTextProps) => {
+export const FormText = ({id, initialValue, label, onChange, placeholder}: FormTextProps) => {
   const [value, setValue] = useState(initialValue || '');
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;
+    if (onChange) onChange(newValue);
     setValue(newValue);
-    onChange(newValue);
   }
 
   return (
-    <label htmlFor={id}>
-      { labelText }
+    <label className='rclib-form-label' htmlFor={id}>
+      { label }
       <input
-        className='rclib-form-element'
+        className='rclib-form-input'
         id={id}
-        name={name}
+        name={id}
         onChange={handleChange}
         placeholder={placeholder}
         type='text'

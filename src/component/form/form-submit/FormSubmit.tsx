@@ -1,17 +1,15 @@
 import './FormSubmit.css';
 
 export interface FormSubmitProps {
-  text?: string;
-  disabled?: boolean;
+  value?: string;
 }
 
-export const FormSubmit = ({text, disabled}: FormSubmitProps) => {
+export const FormSubmit = ({value}: FormSubmitProps) => {
   return (
     <input
-      className='rclib-form-element form-submit'
+      className='slr-button rclib-form-input rclib-form-submit'
       type='submit'
-      value={text}
-      disabled={disabled}
+      value={value}
     />
   );
 }

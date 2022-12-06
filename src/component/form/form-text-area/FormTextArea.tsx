@@ -1,30 +1,30 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useState } from 'react';
+import './FormTextArea.css';
 
 export interface FormTextAreaProps {
   id: string;
   initialValue?: string;
-  labelText?: string;
-  name: string;
-  onChange: (value: string) => any;
+  label?: string;
+  onChange?: (value: string) => any;
   placeholder?: string;
 }
 
-export const FormTextArea = ({id, initialValue, labelText, name, onChange, placeholder}: FormTextAreaProps) => {
+export const FormTextArea = ({id, initialValue, label, onChange, placeholder}: FormTextAreaProps) => {
   const [value, setValue] = useState(initialValue || '');
 
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     const newValue = e.target.value;
+    if (onChange) onChange(newValue);
     setValue(newValue);
-    onChange(newValue);
   }
 
   return (
-    <label htmlFor={id}>
-      { labelText }
+    <label className='rclib-form-label' htmlFor={id}>
+      { label }
       <textarea
-        className='rclib-form-element'
+        className='rclib-form-input rclib-form-text-area'
         id={id}
-        name={name}
+        name={id}
         onChange={handleChange}
         placeholder={placeholder}
         value={value}
