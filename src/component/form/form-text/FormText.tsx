@@ -6,9 +6,10 @@ export interface FormTextProps {
   label?: string;
   onChange?: (value: string) => any;
   placeholder?: string;
+  pattern?: string;
 }
 
-export const FormText = ({id, initialValue, label, onChange, placeholder}: FormTextProps) => {
+export const FormText = ({id, initialValue, label, onChange, placeholder, pattern}: FormTextProps) => {
   const [value, setValue] = useState(initialValue || '');
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -28,6 +29,7 @@ export const FormText = ({id, initialValue, label, onChange, placeholder}: FormT
         placeholder={placeholder}
         type='text'
         value={value}
+        pattern={pattern}
       />
     </label>
   );
