@@ -1,7 +1,7 @@
 .rclib-trip-view {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 
 .rclib-trip-view-title-row {
@@ -17,12 +17,13 @@
 }
 
 .rclib-trip-view-row {
+  align-items: center;
   display: flex;
   gap: 12px;
 }
 
 .rclib-trip-view-row > p {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
-  line-height: 19px;
+  line-height: 17px;
 }

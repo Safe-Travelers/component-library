@@ -15,7 +15,7 @@
 .rclib-trip-preview-content {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
 }
 
 .rclib-trip-preview-content > h2 {
