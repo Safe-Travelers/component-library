@@ -17,12 +17,12 @@ export const Default = Template.bind({});
 Default.args = {
   children: [
     <FormRow>
-      <FormNumber label='Number' placeholder='123' />
-      <FormNumber label='Number 2' placeholder='456' />
+      <FormNumber id='id1' label='Number' placeholder='123' />
+      <FormNumber id='id2' label='Number 2' placeholder='456' />
     </FormRow>,
     <FormRow>
-      <FormNumber label='Number 3' placeholder='123' />
-      <FormNumber label='Number 4' placeholder='456' />
+      <FormNumber id='id3' label='Number 3' placeholder='123' />
+      <FormNumber id='id4' label='Number 4' placeholder='456' />
     </FormRow>,
     <FormRow>
       <FormSubmit />

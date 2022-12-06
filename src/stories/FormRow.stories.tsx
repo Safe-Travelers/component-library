@@ -14,7 +14,7 @@ const Template: ComponentStory<typeof FormRow> = (args) => <FormRow {...args} />
 export const Default = Template.bind({});
 Default.args = {
   children: [
-    <FormNumber label='Number' placeholder='123' />,
-    <FormNumber label='Number 2' placeholder='456' />,
+    <FormNumber id='id1' label='Number' placeholder='123' />,
+    <FormNumber id='id2' label='Number 2' placeholder='456' />,
   ]
 };
