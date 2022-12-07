@@ -7,9 +7,10 @@ export interface FormTextProps {
   onChange?: (value: string) => any;
   placeholder?: string;
   pattern?: string;
+  required?: boolean;
 }
 
-export const FormText = ({id, initialValue, label, onChange, placeholder, pattern}: FormTextProps) => {
+export const FormText = ({id, initialValue, label, onChange, placeholder, pattern, required}: FormTextProps) => {
   const [value, setValue] = useState(initialValue || '');
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -18,6 +19,25 @@ export const FormText = ({id, initialValue, label, onChange, placeholder, patter
     setValue(newValue);
   }
 
+  if (required) {
+    return (
+      <label className='rclib-form-label' htmlFor={id}>
+      { label }
+      <input
+        className='rclib-form-input'
+        id={id}
+        name={id}
+        onChange={handleChange}
+        placeholder={placeholder}
+        type='text'
+        value={value}
+        pattern={pattern}
+        required={required}
+      />
+    </label>
+    )
+  }
+  
   return (
     <label className='rclib-form-label' htmlFor={id}>
       { label }
