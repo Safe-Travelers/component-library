@@ -10,32 +10,41 @@ export interface TripViewProps {
   contacts: string[];
   dateTime: string;
   locationName: string;
+  onEdit: (tripID: string) => any;
+  tripID: string;
   tripName: string;
 }
 
 export const TripView = (props: TripViewProps) => {
-  const {contacts, dateTime, locationName, tripName, ...otherProps} = {...props};
+  const {contacts, dateTime, locationName, onEdit, tripID, tripName, ...otherProps} = {...props};
+
+  const handleEdit = () => {
+    if (onEdit) onEdit(tripID);
+  }
 
   return (
     <div {...otherProps} className='rclib-trip-view'>
-      <div className='rclib-trip-view-title-row'>
-        <h2>{tripName}</h2>
-        <Button className='rclib-trip-view-edit'>
-          <Icon alt='Edit' src={pencilIcon} width='24px' />
-        </Button>
+      <div className='rclib-trip-view-content'>
+        <h3>{tripName}</h3>
+        <div className='rclib-trip-view-row'>
+          <Icon alt='Edit' src={mapMarkerIcon} />
+          <p>{locationName}</p>
+        </div>
+        <div className='rclib-trip-view-row'>
+          <Icon alt='Edit' src={calendarIcon} />
+          <p>{dateTime}</p>
+        </div>
+        <div className='rclib-trip-view-row'>
+          <Icon alt='Edit' src={accountIcon} />
+          <ChipList values={contacts} />
+        </div>
       </div>
-      <div className='rclib-trip-view-row'>
-        <Icon alt='Edit' src={mapMarkerIcon} />
-        <p>{locationName}</p>
-      </div>
-      <div className='rclib-trip-view-row'>
-        <Icon alt='Edit' src={calendarIcon} />
-        <p>{dateTime}</p>
-      </div>
-      <div className='rclib-trip-view-row'>
-        <Icon alt='Edit' src={accountIcon} />
-        <ChipList values={contacts} />
-      </div>
+      <Button
+        className='rclib-trip-view-edit'
+        onClick={handleEdit}
+      >
+        <Icon alt='Edit' src={pencilIcon} width='24px' />
+      </Button>
     </div>
   );
 }

@@ -1,15 +1,10 @@
 .rclib-form-submit {
-  background-color: var(--accent-color);
-  cursor: pointer;
+  border-radius: 20px;
+  flex: 1;
+  min-height: 40px;
+  transition: var(--speed-fast);
 }
 
-.rclib-form-submit:enabled {
-  background-color: var(--accent-color-faded);
-  cursor: pointer;
-}
-
-.rclib-form-submit:disabled {
-  background-color: white;
-  opacity: 0.5;
-  cursor: default;
+.rclib-form-submit-disabled {
+  filter: grayscale(1);
 }

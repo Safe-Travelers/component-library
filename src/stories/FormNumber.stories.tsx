@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { FormNumber } from '../component/form/form-number/FormNumber';
 
 export default {
-    title: 'Display/FormNumber',
+    title: 'Form/FormNumber',
     component: FormNumber,
 
 } as ComponentMeta<typeof FormNumber>;
@@ -12,8 +12,11 @@ const Template: ComponentStory<typeof FormNumber> = (args) => <FormNumber {...ar
 
 export const Default = Template.bind({});
 Default.args = {
-    id: 'TestId',
-    initialValue: 'Initial Value',
-    labelText: 'Label Value',
-    name: 'Name',
+};
+
+export const Complete = Template.bind({});
+Complete.args = {
+  id: 'id',
+  label: 'Number label',
+  placeholder: 'Placeholder'
 };

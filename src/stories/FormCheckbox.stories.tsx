@@ -3,8 +3,8 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { FormCheckbox } from '../component/form/form-checkbox/FormCheckbox';
 
 export default {
-    title: 'Display/FormCheckbox',
-    component: FormCheckbox,
+  title: 'Form/FormCheckbox',
+  component: FormCheckbox,
 
 } as ComponentMeta<typeof FormCheckbox>;
 
@@ -12,8 +12,14 @@ const Template: ComponentStory<typeof FormCheckbox> = (args) => <FormCheckbox {.
 
 export const Default = Template.bind({});
 Default.args = {
-    id: 'TestID',
-    initialValue: 'value',
-    labelText: 'Checkbox Label',
-    name: 'Select'
+  id: 'TestID',
+  initialChecked: false,
+  label: 'Checkmark label',
+};
+
+export const Checked = Template.bind({});
+Checked.args = {
+  id: 'TestID',
+  initialChecked: true,
+  label: 'Checkmark label',
 };

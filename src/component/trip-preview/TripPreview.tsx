@@ -6,12 +6,18 @@ import './TripPreview.css';
 export interface TripPreviewProps {
   contacts: string[];
   location: string;
+  onDelete?: (id: string) => any;
   time: string;
   title: string;
+  tripID: string;
 }
 
 export const TripPreview = (props: TripPreviewProps) => {
-  const {contacts, location, time, title} = {...props};
+  const {contacts, location, onDelete, time, title, tripID} = {...props};
+
+  const handleDelete = () => {
+    if (onDelete) onDelete(tripID);
+  }
 
   return (
     <div className='rclib-trip-preview'>
@@ -22,7 +28,16 @@ export const TripPreview = (props: TripPreviewProps) => {
         <p>{time}</p>
         <ChipList values={contacts} />
       </div>
-      <Icon alt='Delete' className='rclib-trip-preview-delete' src={closeIcon} />
+      {
+        onDelete ?
+        <Icon
+          alt='Delete'
+          className='rclib-trip-preview-delete'
+          onClick={handleDelete}
+          src={closeIcon}
+        /> :
+        null
+      }
     </div>
   );
 }
