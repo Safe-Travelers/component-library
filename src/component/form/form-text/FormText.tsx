@@ -1,7 +1,6 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, forwardRef, useState } from "react";
 
 export interface FormTextProps {
-  ref?: React.LegacyRef<HTMLInputElement>;
   id: string;
   initialValue?: string;
   label?: string;
@@ -11,57 +10,51 @@ export interface FormTextProps {
   required?: boolean;
 }
 
-export const FormText = ({
-  ref,
-  id,
-  initialValue,
-  label,
-  onChange,
-  placeholder,
-  pattern,
-  required,
-}: FormTextProps) => {
-  const [value, setValue] = useState(initialValue || "");
+export const FormText = forwardRef<
+  HTMLInputElement,
+  React.PropsWithChildren<FormTextProps>
+>((props: FormTextProps, ref) => {
+  const [value, setValue] = useState(props.initialValue || "");
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;
-    if (onChange) onChange(newValue);
+    if (props.onChange) props.onChange(newValue);
     setValue(newValue);
   };
 
-  if (required) {
+  if (props.required) {
     return (
-      <label className="rclib-form-label" htmlFor={id}>
-        {label}
+      <label className="rclib-form-label" htmlFor={props.id}>
+        {props.label}
         <input
           className="rclib-form-input"
-          id={id}
-          name={id}
+          id={props.id}
+          name={props.id}
           onChange={handleChange}
-          placeholder={placeholder}
+          placeholder={props.placeholder}
           type="text"
           value={value}
-          pattern={pattern}
-          required={required}
+          pattern={props.pattern}
+          required={props.required}
         />
       </label>
     );
   }
 
   return (
-    <label className="rclib-form-label" htmlFor={id}>
-      {label}
+    <label className="rclib-form-label" htmlFor={props.id}>
+      {props.label}
       <input
         ref={ref}
         className="rclib-form-input"
-        id={id}
-        name={id}
+        id={props.id}
+        name={props.id}
         onChange={handleChange}
-        placeholder={placeholder}
+        placeholder={props.placeholder}
         type="text"
         value={value}
-        pattern={pattern}
+        pattern={props.pattern}
       />
     </label>
   );
-};
+});
