@@ -6,6 +6,7 @@ export * from "./component/form/form-row/FormRow";
 export * from "./component/form/form-submit/FormSubmit";
 export * from "./component/form/form-text-area/FormTextArea";
 export * from "./component/form/form-text/FormText";
+export * from "./component/form/form-location/FormLocation";
 export * from "./component/form/form-checkbox/FormCheckbox";
 export * from "./component/form/form-number/FormNumber";
 export * from "./component/form/form-select/FormSelect";
