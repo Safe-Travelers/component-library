@@ -15,5 +15,7 @@ Default.args = {
   contacts: ['First Last 1', 'First Last 2', 'First Last 3'],
   dateTime: 'Date & Time',
   locationName: 'Location name',
+  onEdit: undefined,
+  tripID: 'c1',
   tripName: 'Trip name',
 };
