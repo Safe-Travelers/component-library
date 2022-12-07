@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import Vote from "../component/vote/Vote";
+import { Vote } from "../component/vote/Vote";
 
 export default {
   title: "Input/Vote",

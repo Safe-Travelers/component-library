@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import StarRating from "../component/star-rating/StarRating";
+import { StarRating } from "../component/star-rating/StarRating";
 
 export default {
   title: "Input/StarRating",

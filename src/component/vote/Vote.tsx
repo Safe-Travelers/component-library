@@ -6,7 +6,7 @@ export interface VoteProps {
   reviewVote: number;
 }
 
-const Vote = ({ onVote, reviewVote }: VoteProps) => {
+export const Vote = ({ onVote, reviewVote }: VoteProps) => {
   let [vote, setVote] = useState(reviewVote);
 
   const onVoteClick = (input: number) => {
@@ -82,5 +82,3 @@ const Vote = ({ onVote, reviewVote }: VoteProps) => {
     </div>
   );
 };
-
-export default Vote;

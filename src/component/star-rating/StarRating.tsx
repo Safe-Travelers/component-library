@@ -12,7 +12,7 @@ export interface StarRatingProps {
 }
 
 // if this component is being used on the Add Review page, set rating = -1
-const StarRating = ({
+export const StarRating = ({
   onClick,
   display,
   rating,
@@ -95,5 +95,3 @@ const StarRating = ({
     </div>
   );
 };
-
-export default StarRating;

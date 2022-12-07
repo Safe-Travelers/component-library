@@ -2,8 +2,8 @@ import { ChipList, Icon } from "@jam-dev/starlight-react";
 import { useState } from "react";
 import closeIcon from "../../asset/icon/close.svg";
 import reviewIcon from "../../asset/icon/message.svg";
-import StarRating from "../star-rating/StarRating";
-import Vote from "../vote/Vote";
+import { StarRating } from "../star-rating/StarRating";
+import { Vote } from "../vote/Vote";
 import "./ReviewPreview.css";
 
 export interface ReviewPreviewProps {
