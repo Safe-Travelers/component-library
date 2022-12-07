@@ -1,38 +1,55 @@
-import {ChangeEvent, FormEvent, ReactNode, useState} from 'react';
+import { ChangeEvent, ReactNode, useState } from 'react';
 import '../FormCommon.css';
-//import './FormSelect.css';
+import './FormSelect.css';
 
 export interface FormSelectProps {
-    id: string;
-    initialValue?: string;
-    labelText?: string;
-    name: string;
-    onChange: (value: string) => any;
-    children?: ReactNode;
+  id: string;
+  initialValue?: string;
+  label?: string;
+  onChange?: (value: string) => any;
+  options?: string[];
+  placeholder?: string;
 }
 
-export const FormSelect = ({id, initialValue, labelText, name, onChange, children}: FormSelectProps) => {
-    const [value, setValue] = useState(initialValue || '');
+export const FormSelect = ({id, initialValue, label, onChange, options, placeholder}: FormSelectProps) => {
+  const [value, setValue] = useState(initialValue || '');
 
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        const newValue = e.target.value;
-        setValue(newValue);
-        onChange(newValue);
+  const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const newValue = e.target.value;
+    if (onChange && newValue !== placeholder) onChange(newValue);
+    setValue(newValue);
+  }
+
+  const renderOptions = (placeholder: string | undefined, options: string[] | undefined): ReactNode[] | null => {
+    const optionElements: ReactNode[] = [];
+
+    if (placeholder) {
+      optionElements.push(
+        <option key={placeholder} value={placeholder}>{placeholder}</option>
+      );
     }
 
-    return (
-        <label htmlFor={id}>
-            { labelText }
-            <select
-                className='rclib-form-element'
-                id={id}
-                name={name}
-                //onChange={handleChange}
-                value={value}
-            >
-                { children }
-            </select>
-        </label>
-    );
-}
+    options?.forEach(option => {
+      optionElements.push(
+        <option key={option} value={option}>{option}</option>
+      );
+    });
 
+    return optionElements.length > 0 ? optionElements : null;
+  }
+
+  return (
+    <label className='rclib-form-label' htmlFor={id}>
+      { label }
+      <select
+        className='rclib-form-input rclib-form-select'
+        id={id}
+        name={id}
+        onChange={handleChange}
+        value={value}
+      >
+        { renderOptions(placeholder, options) }
+      </select>
+    </label>
+  );
+}

@@ -1,6 +1,6 @@
 {
   "name": "@safe-traveler/react-component-lib",
-  "version": "0.0.31",
+  "version": "0.0.37",
   "type": "module",
   "scripts": {
     "dev": "vite",

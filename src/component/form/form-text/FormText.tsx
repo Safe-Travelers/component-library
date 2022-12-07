@@ -4,41 +4,63 @@ export interface FormTextProps {
   ref?: React.LegacyRef<HTMLInputElement>;
   id: string;
   initialValue?: string;
-  labelText?: string;
-  name: string;
-  onChange: (value: string) => any;
+  label?: string;
+  onChange?: (value: string) => any;
   placeholder?: string;
+  pattern?: string;
+  required?: boolean;
 }
 
 export const FormText = ({
   ref,
   id,
   initialValue,
-  labelText,
-  name,
+  label,
   onChange,
   placeholder,
+  pattern,
+  required,
 }: FormTextProps) => {
   const [value, setValue] = useState(initialValue || "");
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;
+    if (onChange) onChange(newValue);
     setValue(newValue);
-    onChange(newValue);
   };
 
+  if (required) {
+    return (
+      <label className="rclib-form-label" htmlFor={id}>
+        {label}
+        <input
+          className="rclib-form-input"
+          id={id}
+          name={id}
+          onChange={handleChange}
+          placeholder={placeholder}
+          type="text"
+          value={value}
+          pattern={pattern}
+          required={required}
+        />
+      </label>
+    );
+  }
+
   return (
-    <label htmlFor={id}>
-      {labelText}
+    <label className="rclib-form-label" htmlFor={id}>
+      {label}
       <input
         ref={ref}
-        className="rclib-form-element"
+        className="rclib-form-input"
         id={id}
-        name={name}
+        name={id}
         onChange={handleChange}
         placeholder={placeholder}
         type="text"
         value={value}
+        pattern={pattern}
       />
     </label>
   );
