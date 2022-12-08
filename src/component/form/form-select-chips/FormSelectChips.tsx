@@ -13,6 +13,8 @@ export interface FormSelectChipsProps {
 }
 
 export const FormSelectChips = ({id, initialValue, label, onChange, options, placeholder}: FormSelectChipsProps) => {
+  const [chipValues, setChipValues] = useState<string[]>([]);
+
   const sortOptions = (options: FormSelectOption[]) => {
     const newOptions = [...options];;
     newOptions.sort((a, b) => a.name.localeCompare(b.name));
@@ -25,15 +27,19 @@ export const FormSelectChips = ({id, initialValue, label, onChange, options, pla
     return newChips;
   }
 
-  const [selectOptions, setSelectOptions] = useState<FormSelectOption[]>(sortOptions(options || []));
-  const [chipValues, setChipValues] = useState<string[]>([]);
+  const getSelectOptions = (options: FormSelectOption[] | undefined, chipValues: string[]): FormSelectOption[] => {
+    if (!options) return [];
+
+    const selectOptions = options.filter(e => {
+      return !chipValues.includes(e.name);
+    });
+
+    return sortOptions(selectOptions);
+  }
 
   const handleChangeOption = (value: string) => {
-    const deletedOption = selectOptions.find(e => e.value === value);
+    const deletedOption = options?.find(e => e.value === value);
     if (!deletedOption) return;
-
-    const newSelectOptions = selectOptions.filter(e => e.value !== value)
-    setSelectOptions(newSelectOptions);
 
     const newChipValues = sortChips([...chipValues, deletedOption.name])
     setChipValues(newChipValues);
@@ -45,9 +51,6 @@ export const FormSelectChips = ({id, initialValue, label, onChange, options, pla
     const addedOption = options?.find(e => e.name === value);
     const deletedChip = chipValues.find(e => e === value);
     if (!addedOption || !deletedChip) return;
-
-    const newSelectOptions = sortOptions([...selectOptions, addedOption]);
-    setSelectOptions(newSelectOptions);
 
     const newChipValues = chipValues.filter(e => e !== value);
     setChipValues(newChipValues);
@@ -62,7 +65,7 @@ export const FormSelectChips = ({id, initialValue, label, onChange, options, pla
         initialValue={initialValue}
         label={label}
         onChange={handleChangeOption}
-        options={selectOptions}
+        options={getSelectOptions(options, chipValues)}
         placeholder={placeholder}
       />
       {
