@@ -7,7 +7,7 @@ export interface FormSelectChipsProps {
   id: string;
   initialValue?: string;
   label?: string;
-  onChange?: (value: string) => any;
+  onChange?: (values: string[]) => any;
   options?: FormSelectOption[];
   placeholder?: string;
 }
@@ -29,23 +29,30 @@ export const FormSelectChips = ({id, initialValue, label, onChange, options, pla
   const [chipValues, setChipValues] = useState<string[]>([]);
 
   const handleChangeOption = (value: string) => {
-    const selectedOption = selectOptions.find(e => e.value === value);
-    if (!selectedOption) return;
+    const deletedOption = selectOptions.find(e => e.value === value);
+    if (!deletedOption) return;
 
-    setSelectOptions(selectOptions.filter(e => e.value !== value));
-    setChipValues(sortChips([...chipValues, selectedOption?.name]));
+    const newSelectOptions = selectOptions.filter(e => e.value !== value)
+    setSelectOptions(newSelectOptions);
 
-    if (onChange) onChange(value);
+    const newChipValues = sortChips([...chipValues, deletedOption.name])
+    setChipValues(newChipValues);
+
+    if (onChange) onChange(chipValues);
   }
 
   const handleDeleteChip = (value: string) => {
-    setChipValues(chipValues.filter(e => e !== value));
+    const addedOption = options?.find(e => e.name === value);
+    const deletedChip = chipValues.find(e => e === value);
+    if (!addedOption || !deletedChip) return;
 
-    const newOption = options?.find(e => e.name === value);
-    if (!newOption) return;
-
-    const newSelectOptions = sortOptions([...selectOptions, newOption]);
+    const newSelectOptions = sortOptions([...selectOptions, addedOption]);
     setSelectOptions(newSelectOptions);
+
+    const newChipValues = chipValues.filter(e => e !== value);
+    setChipValues(newChipValues);
+
+    if (onChange) onChange(chipValues);
   }
 
   return(
