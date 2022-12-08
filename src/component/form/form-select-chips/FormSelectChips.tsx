@@ -44,6 +44,8 @@ export const FormSelectChips = ({id, initialValue, label, onChange, options, pla
     const newChipValues = sortChips([...chipValues, deletedOption.name])
     setChipValues(newChipValues);
 
+    console.log(newChipValues);
+
     if (onChange) onChange(newChipValues);
   }
 
@@ -55,7 +57,9 @@ export const FormSelectChips = ({id, initialValue, label, onChange, options, pla
     const newChipValues = chipValues.filter(e => e !== value);
     setChipValues(newChipValues);
 
-    if (onChange) onChange(chipValues);
+    console.log(newChipValues);
+
+    if (onChange) onChange(newChipValues);
   }
 
   return(
