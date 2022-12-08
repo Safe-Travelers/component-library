@@ -2,12 +2,17 @@ import { ChangeEvent, ReactNode, useState } from 'react';
 import '../FormCommon.css';
 import './FormSelect.css';
 
+export interface FormSelectOption {
+  name: string;
+  value: string;
+}
+
 export interface FormSelectProps {
   id: string;
   initialValue?: string;
   label?: string;
   onChange?: (value: string) => any;
-  options?: string[];
+  options?: FormSelectOption[];
   placeholder?: string;
 }
 
@@ -20,7 +25,7 @@ export const FormSelect = ({id, initialValue, label, onChange, options, placehol
     setValue(newValue);
   }
 
-  const renderOptions = (placeholder: string | undefined, options: string[] | undefined): ReactNode[] | null => {
+  const renderOptions = (placeholder: string | undefined, options: FormSelectOption[] | undefined): ReactNode[] | null => {
     const optionElements: ReactNode[] = [];
 
     if (placeholder) {
@@ -31,7 +36,7 @@ export const FormSelect = ({id, initialValue, label, onChange, options, placehol
 
     options?.forEach(option => {
       optionElements.push(
-        <option key={option} value={option}>{option}</option>
+        <option key={option.value} value={option.value}>{option.name}</option>
       );
     });
 

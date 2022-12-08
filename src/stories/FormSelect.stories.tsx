@@ -25,10 +25,25 @@ Values.args = {
   label: 'Select label',
   placeholder: 'Placeholder option',
   options: [
-    'Option 1',
-    'Option 2',
-    'Option 3',
-    'Option 4',
-    'Option 5',
+    {
+      name: 'Option 1',
+      value: 'option-1',
+    },
+    {
+      name: 'Option 2',
+      value: 'option-2',
+    },
+    {
+      name: 'Option 3',
+      value: 'option-4',
+    },
+    {
+      name: 'Option 4',
+      value: 'option-4',
+    },
+    {
+      name: 'Option 5',
+      value: 'option-5',
+    },
   ],
 };
