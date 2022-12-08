@@ -1,9 +1,7 @@
-import { ChipList, Icon } from "@jam-dev/starlight-react";
-import { useState } from "react";
+import { Icon } from "@jam-dev/starlight-react";
 import closeIcon from "../../asset/icon/close.svg";
 import reviewIcon from "../../asset/icon/message.svg";
 import { StarRating } from "../star-rating/StarRating";
-import { Vote } from "../vote/Vote";
 import "./ReviewPreviewDelete.css";
 
 export interface ReviewPreviewDeleteProps {
@@ -15,7 +13,7 @@ export interface ReviewPreviewDeleteProps {
   body: string;
   profileId: string;
   reviewId: string;
-  onDelete?: (id: string) => any;
+  onDelete?: () => any;
   onModify?: () => any;
 }
 
@@ -33,10 +31,6 @@ export const ReviewPreviewDelete = (props: ReviewPreviewDeleteProps) => {
     onModify
   } = { ...props };
 
-  const handleDelete = () => {
-    if (onDelete) onDelete(reviewId);
-  }
-
   return (
     <div className="rclib-review-preview">
       <Icon
@@ -47,7 +41,7 @@ export const ReviewPreviewDelete = (props: ReviewPreviewDeleteProps) => {
       />
       <div className="rclib-review-preview-content">
         <div className="rclib-review-preview-header">
-          <h2>{title}</h2>
+          <h2 onClick={onModify}>{title}</h2>
           <StarRating
             display={true}
             rating={rating}
@@ -74,7 +68,7 @@ export const ReviewPreviewDelete = (props: ReviewPreviewDeleteProps) => {
         <Icon
           alt='Delete'
           className='rclib-review-preview-delete-icon'
-          onClick={handleDelete}
+          onClick={onDelete}
           src={closeIcon}
         /> :
         null
