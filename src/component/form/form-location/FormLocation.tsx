@@ -1,5 +1,6 @@
 //import {ChangeEvent, useRef, useState} from "react";
 import usePlacesAutocomplete from "use-places-autocomplete";
+import "./FormLocation.css";
 
 export interface FormLocationProps {
     //id: string;
@@ -44,16 +45,18 @@ export const FormLocation = ({
              } = suggestion;
             console.log(suggestion);
              return (
-                 <li key={place_id} onClick={handleSelect(suggestion)}>
-                     <strong>{main_text}</strong> <small>{secondary_text}</small>
-                 </li>
+                 <div className="autocomplete-suggestion">
+                     <li className="listing-format" key={place_id} onClick={handleSelect(suggestion)}>
+                         <strong>{main_text}</strong> <small>{secondary_text}</small>
+                     </li>
+                 </div>
              );
          });
 
         return (
             <div>
                 <label>{labelText}</label>
-                <input value={value} onChange={handleInput} />
+                <input className="location-input" value={value} onChange={handleInput} />
                 {status === 'OK' && <ul>{renderSuggestions()}</ul>}
             </div>
         );
