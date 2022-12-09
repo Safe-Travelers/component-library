@@ -28,6 +28,7 @@ export const TripPreviewList = (props: TripPreviewListProps) => {
           contacts={tripPreviewProp.contacts}
           key={tripPreviewProp.tripID}
           location={tripPreviewProp.location}
+          onClick={tripPreviewProp.onClick}
           onDelete={onDelete ? handleDelete : undefined}
           time={tripPreviewProp.time}
           title={tripPreviewProp.title}

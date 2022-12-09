@@ -23,6 +23,11 @@
   line-height: 19px;
 }
 
+.rclib-trip-preview-content > h2.rclib-trip-title-clickable {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .rclib-trip-preview-content > p {
   font-size: 14px;
   font-style: italic;
