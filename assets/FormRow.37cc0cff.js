@@ -1,0 +1,2 @@
+var n=Object.defineProperty;var m=(o,e)=>n(o,"name",{value:e,configurable:!0});import{j as c}from"./jsx-runtime.931debec.js";const r=m(({children:o})=>c("div",{className:"rclib-form-row",children:o}),"FormRow");try{r.displayName="FormRow",r.__docgenInfo={description:"",displayName:"FormRow",props:{}},typeof STORYBOOK_REACT_CLASSES<"u"&&(STORYBOOK_REACT_CLASSES["src/component/form/form-row/FormRow.tsx#FormRow"]={docgenInfo:r.__docgenInfo,name:"FormRow",path:"src/component/form/form-row/FormRow.tsx#FormRow"})}catch{}export{r as F};
+//# sourceMappingURL=FormRow.37cc0cff.js.map
