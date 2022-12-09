@@ -4,7 +4,7 @@ import usePlacesAutocomplete from "use-places-autocomplete";
 export interface FormLocationProps {
     //id: string;
     //apiKey: string;
-    initialValue?: string;
+    //initialValue?: string;
     labelText?: string;
     //name: string;
     onChange: (value: string) => any;
@@ -14,7 +14,6 @@ export interface FormLocationProps {
 export const FormLocation = ({
                                  //id,
                                  //apiKey,
-                                 initialValue,
                                  labelText,
                                  //name,
                                  onChange,
@@ -25,9 +24,6 @@ export const FormLocation = ({
     //Link found here: https://www.npmjs.com/package/use-places-autocomplete
     const { value, suggestions: { status, data }, setValue, clearSuggestions }  = usePlacesAutocomplete();
 
-    if (initialValue) {
-        setValue(initialValue);
-    }
 
     const handleInput = (e: any) => {
         setValue(e.target.value);
